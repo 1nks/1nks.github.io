@@ -14,6 +14,27 @@
             margin: 0;
             padding: 0;
             scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Animation Keyframes */
+        @keyframes whoosh {
+            0% {
+                transform: scale(0.8) translateY(-50px);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.05) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Apply animation on load */
+        .whoosh-effect {
+            animation: whoosh 1s ease-out forwards;
         }
 
         header {
@@ -34,8 +55,8 @@
         }
 
         .logo img {
-            height: 80px; /* Increased size */
-            width: 80px;  /* Increased size */
+            height: 80px;
+            width: 80px;
             border-radius: 50%;
             margin-right: 15px;
         }
@@ -60,10 +81,12 @@
         .section {
             padding: 60px 20px;
             text-align: center;
+            opacity: 0;
+            animation: whoosh 1s ease-out forwards;
         }
 
-        .section:nth-child(even) {
-            background-color: #b3e5fc;
+        .section:nth-child(odd) {
+            background-color: #e1f5fe;
         }
 
         .section h2 {
@@ -79,39 +102,12 @@
             color: #555;
         }
 
-        .section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .section ul li {
-            font-size: 1.1rem;
-            color: #333;
-            padding: 5px 0;
-        }
-
-        .games {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .game-card {
-            background-color: #fff;
-            margin: 15px;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            width: 250px;
-            transition: transform 0.3s;
-        }
-
-        .game-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .game-card h3 {
-            color: #0288d1;
+        .divider {
+            width: 80%;
+            height: 2px;
+            background-color: #0288d1;
+            margin: 40px auto;
+            border-radius: 2px;
         }
 
         img {
@@ -131,97 +127,88 @@
         .footer-text {
             font-size: 1rem;
         }
-
-        .btn {
-            background-color: #0288d1;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
-        }
-
-        .btn:hover {
-            background-color: #0277bd;
-        }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <!-- Logo and Title -->
-        <div class="logo">
-            <img src="https://i.pinimg.com/564x/b8/fc/38/b8fc388eb330f894f01608bced267d36.jpg" alt="Logo">
-        </div>
-
-        <!-- Navigation Menu -->
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#hobbies">Hobbies</a>
-            <a href="#interests">Interests</a>
-            <a href="#games">Games</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <!-- About Me Section -->
-    <section class="section" id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm so glad you're here. I'm a passionate individual who loves to explore new things, especially when it comes to hobbies and games. Let's dive into my world!</p>
-        <img src="your-image-url.jpg" alt="A cute introduction photo">
-    </section>
-
-    <!-- Hobbies Section -->
-    <section class="section" id="hobbies">
-        <h2>My Hobbies</h2>
-        <p>Here are some of the things I love doing in my free time:</p>
-        <ul>
-            <li>🌱 Gardening: Growing my own veggies and flowers!</li>
-            <li>🎨 Painting: Letting my creativity flow on the canvas.</li>
-            <li>📖 Reading: I can get lost in a good book for hours.</li>
-            <li>🚴‍♂️ Cycling: Exploring nature on two wheels.</li>
-        </ul>
-        <img src="your-hobby-image.jpg" alt="A photo of my hobbies">
-    </section>
-
-    <!-- Interests Section -->
-    <section class="section" id="interests">
-        <h2>My Interests</h2>
-        <p>I'm always curious and love learning about:</p>
-        <ul>
-            <li>🌌 Astronomy: Gazing at the stars and learning about the universe.</li>
-            <li>🧑‍💻 Coding: Creating fun projects and learning new programming languages.</li>
-            <li>🎶 Music: Discovering new artists and genres.</li>
-        </ul>
-        <img src="your-interest-image.jpg" alt="A photo of my interests">
-    </section>
-
-    <!-- Games Section -->
-    <section class="section" id="games">
-        <h2>Favorite Games</h2>
-        <div class="games">
-            <div class="game-card">
-                <h3>🎮 Game 1</h3>
-                <p>A thrilling adventure that keeps me hooked for hours.</p>
-                <img src="your-game1-image.jpg" alt="Game 1 Screenshot">
+    <!-- Page Wrapper for Whoosh Effect -->
+    <div class="whoosh-effect">
+        <header>
+            <!-- Logo and Title -->
+            <div class="logo">
+                <img src="your-logo-url.jpg" alt="Logo">
             </div>
-            <div class="game-card">
-                <h3>🕹️ Game 2</h3>
-                <p>Perfect for relaxing and unwinding after a long day.</p>
-                <img src="your-game2-image.jpg" alt="Game 2 Screenshot">
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <h2>Contact Me</h2>
-        <button class="btn" onclick="alert('Thanks for reaching out!')">Say Hello</button>
-    </section>
+            <!-- Navigation Menu -->
+            <nav>
+                <a href="#about">About Me</a>
+                <a href="#hobbies">Hobbies</a>
+                <a href="#interests">Interests</a>
+                <a href="#games">Games</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <!-- About Me Section -->
+        <section class="section" id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm so glad you're here. I'm a passionate individual who loves to explore new things, especially when it comes to hobbies and games. Let's dive into my world!</p>
+            <img src="your-image-url.jpg" alt="A cute introduction photo">
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Hobbies Section -->
+        <section class="section" id="hobbies">
+            <h2>My Hobbies</h2>
+            <p>Here are some of the things I love doing in my free time:</p>
+            <ul>
+                <li>🌱 Gardening</li>
+                <li>🎨 Painting</li>
+                <li>📖 Reading</li>
+                <li>🚴‍♂️ Cycling</li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Interests Section -->
+        <section class="section" id="interests">
+            <h2>My Interests</h2>
+            <p>I'm always curious and love learning about:</p>
+            <ul>
+                <li>🌌 Astronomy</li>
+                <li>🧑‍💻 Coding</li>
+                <li>🎶 Music</li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Games Section -->
+        <section class="section" id="games">
+            <h2>Favorite Games</h2>
+            <div class="games">
+                <div class="game-card">
+                    <h3>🎮 Game 1</h3>
+                    <p>A thrilling adventure.</p>
+                </div>
+                <div class="game-card">
+                    <h3>🕹️ Game 2</h3>
+                    <p>Perfect for relaxing.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <h2>Contact Me</h2>
+            <button onclick="alert('Thanks for reaching out!')">Say Hello</button>
+        </section>
+    </div>
 
     <footer>
         <p class="footer-text">&copy; 2024 My Personal Page | Created with 💙</p>
