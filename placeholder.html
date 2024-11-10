@@ -7,6 +7,7 @@
     <title>About Me</title>
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap"> <!-- Cute font -->
     <style>
         body {
             background-color: #e0f7fa;
@@ -22,7 +23,7 @@
             padding: 10px 20px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-start; /* Align the logo and text to the left */
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -39,6 +40,13 @@
             width: 80px;
             border-radius: 50%;
             margin-right: 15px;
+        }
+
+        .logo-text {
+            font-family: 'Baloo 2', cursive; /* Cute font */
+            font-size: 2rem;
+            color: #ffffff;
+            margin-left: 10px;
         }
 
         nav {
@@ -77,6 +85,13 @@
             font-size: 2rem;
             color: #0288d1;
             margin-bottom: 20px;
+            font-family: 'Baloo 2', cursive; /* Cute font applied here */
+        }
+
+        .section h2 span {
+            font-size: 1.5rem;
+            color: #ff4081;
+            margin-left: 10px;
         }
 
         .section p {
@@ -138,16 +153,49 @@
             color: #555;
         }
 
-        /* Hover Effect for the sections */
+        /* Hobby and Interest Card Section */
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #0288d1;
+            border-radius: 10px;
+            width: 200px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: #0288d1;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #555;
+        }
     </style>
 </head>
 
 <body>
 
     <header>
-        <!-- Logo and Title -->
+        <!-- Logo and Cute Text -->
         <div class="logo">
-            <img src="your-logo-url.jpg" alt="Logo">
+            <img src="your-logo-url.jpg" alt="Logo"> <!-- Replace with your logo URL -->
+            <span class="logo-text">My Cute Page! 🌸</span> <!-- Cute text next to the logo -->
         </div>
 
         <!-- Navigation Menu -->
@@ -162,73 +210,54 @@
 
     <!-- About Me Section -->
     <section class="section" id="about">
-        <h2>About Me</h2>
+        <h2>About Me<span>💖</span></h2>
         <p>Hello! I'm so glad you're here. I'm a passionate individual who loves to explore new things, especially when it comes to hobbies and games. Let's dive into my world!</p>
         <img src="your-image-url.jpg" alt="A cute introduction photo">
     </section>
 
     <!-- Hobbies Section -->
     <section class="section" id="hobbies">
-        <h2>My Hobbies</h2>
+        <h2>My Hobbies<span>🌟</span></h2>
         <p>Here are some of the things I love doing in my free time:</p>
-        <ul>
-            <li>🌱 Gardening</li>
-            <li>🎨 Painting</li>
-            <li>📖 Reading</li>
-            <li>🚴‍♂️ Cycling</li>
-        </ul>
-    </section>
-
-    <!-- Interests Section -->
-    <section class="section" id="interests">
-        <h2>My Interests</h2>
-        <p>I'm always curious and love learning about:</p>
-        <ul>
-            <li>🌌 Astronomy</li>
-            <li>🧑‍💻 Coding</li>
-            <li>🎶 Music</li>
-        </ul>
-    </section>
-
-    <!-- Games Section -->
-    <section class="section" id="games">
-        <h2>Favorite Games</h2>
-        <div class="games">
-            <!-- Game 1 -->
-            <div class="game-card">
-                <h3>🎮 Game 1</h3>
-                <p>A thrilling adventure.</p>
+        <div class="cards">
+            <div class="card">
+                <h3>🌱 Gardening</h3>
+                <p>Growing plants and flowers</p>
             </div>
-            <!-- Game 2 -->
-            <div class="game-card">
-                <h3>🕹️ Game 2</h3>
-                <p>Perfect for relaxing.</p>
-            </div>
-            <!-- Game 3 -->
-            <div class="game-card">
-                <h3>🎲 Game 3</h3>
-                <p>Strategy and fun!</p>
-            </div>
-            <!-- Game 4 -->
-            <div class="game-card">
-                <h3>🎮 Game 4</h3>
-                <p>Action-packed and exciting!</p>
+            <div class="card">
+                <h3>🎨 Painting</h3>
+                <p>Bringing creativity to life</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <h2>Contact Me</h2>
-        <button onclick="alert('Thanks for reaching out!')" style="background-color: #0288d1; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s;">
-            Say Hello
-        </button>
+    <!-- Interests Section -->
+    <section class="section" id="interests">
+        <h2>My Interests<span>🎶</span></h2>
+        <p>I'm always curious and love learning about:</p>
+        <div class="cards">
+            <div class="card">
+                <h3>🌌 Astronomy</h3>
+                <p>Exploring the stars</p>
+            </div>
+            <div class="card">
+                <h3>🧑‍💻 Coding</h3>
+                <p>Building digital worlds</p>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p class="footer-text">&copy; 2024 My Personal Page | Created with 💙</p>
-    </footer>
-
-</body>
-
-</html>
+    <!-- Games Section -->
+    <section class="section" id="games">
+        <h2>Favorite Games<span>🎮</span></h2>
+        <div class="games">
+            <div class="game-card">
+                <h3>🎮 Game 1</h3>
+                <p>A thrilling adventure.</p>
+            </div>
+            <div class="game-card">
+                <h3>🕹️ Game 2</h3>
+                <p>Perfect for relaxing.</p>
+            </div>
+            <div class="game-card">
+                <h3>🎮 Game 
