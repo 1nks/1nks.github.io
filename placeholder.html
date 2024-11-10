@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
-    <link rel="icon" href="favicon.ico" type="main/main/images/favicon.ico">
-
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;500&display=swap">
     <style>
@@ -17,6 +15,28 @@
             padding: 0;
             scroll-behavior: smooth;
             overflow-x: hidden;
+        }
+
+        /* Animation Keyframes */
+        @keyframes whoosh {
+            0% {
+                transform: scale(0.8) translateY(-50px);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.05) translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Apply animation on load */
+        .whoosh-effect {
+            animation: whoosh 1s ease-out forwards;
         }
 
         header {
@@ -56,7 +76,6 @@
             transition: color 0.3s;
         }
 
-        /* Restore hover effect for Games tab */
         nav a:hover {
             color: #b3e5fc;
         }
@@ -64,6 +83,8 @@
         .section {
             padding: 60px 20px;
             text-align: center;
+            opacity: 0;
+            animation: whoosh 1s ease-out forwards;
         }
 
         .section:nth-child(odd) {
@@ -101,113 +122,127 @@
             font-size: 1rem;
         }
 
-        /* Divider Styles */
-        .divider {
-            border: none;
-            height: 2px;
-            background-color: #0288d1;
-            margin: 40px 0;
+        /* Game Card Section */
+        .games {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        /* Contact Button with Curved Blue Background */
-        .contact-button {
-            background-color: #0288d1;
-            color: white;
-            font-size: 1.1rem;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .game-card {
+            background-color: #ffffff;
+            border: 1px solid #0288d1;
+            border-radius: 10px;
+            width: 200px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .contact-button:hover {
-            background-color: #01579b;
+        .game-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
+        .game-card h3 {
+            font-size: 1.5rem;
+            color: #0288d1;
+        }
+
+        .game-card p {
+            font-size: 1rem;
+            color: #555;
+        }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <!-- Logo and Title -->
-        <div class="logo">
-            <img src="your-logo-url.jpg" alt="Logo">
-        </div>
-
-        <!-- Navigation Menu -->
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#hobbies">Hobbies</a>
-            <a href="#interests">Interests</a>
-            <a href="#games">Games</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <!-- About Me Section -->
-    <section class="section" id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm so glad you're here. I'm a passionate individual who loves to explore new things, especially when it comes to hobbies and games. Let's dive into my world!</p>
-        <img src="your-image-url.jpg" alt="A cute introduction photo">
-    </section>
-
-    <!-- Divider -->
-    <hr class="divider">
-
-    <!-- Hobbies Section -->
-    <section class="section" id="hobbies">
-        <h2>My Hobbies</h2>
-        <p>Here are some of the things I love doing in my free time:</p>
-        <ul>
-            <li>🌱 Gardening</li>
-            <li>🎨 Painting</li>
-            <li>📖 Reading</li>
-            <li>🚴‍♂️ Cycling</li>
-        </ul>
-    </section>
-
-    <!-- Divider -->
-    <hr class="divider">
-
-    <!-- Interests Section -->
-    <section class="section" id="interests">
-        <h2>My Interests</h2>
-        <p>I'm always curious and love learning about:</p>
-        <ul>
-            <li>🌌 Astronomy</li>
-            <li>🧑‍💻 Coding</li>
-            <li>🎶 Music</li>
-        </ul>
-    </section>
-
-    <!-- Divider -->
-    <hr class="divider">
-
-    <!-- Games Section -->
-    <section class="section" id="games">
-        <h2>Favorite Games</h2>
-        <div class="games">
-            <div class="game-card">
-                <h3>🎮 Game 1</h3>
-                <p>A thrilling adventure.</p>
+    <!-- Page Wrapper for Whoosh Effect -->
+    <div class="whoosh-effect">
+        <header>
+            <!-- Logo and Title -->
+            <div class="logo">
+                <img src="your-logo-url.jpg" alt="Logo">
             </div>
-            <div class="game-card">
-                <h3>🕹️ Game 2</h3>
-                <p>Perfect for relaxing.</p>
+
+            <!-- Navigation Menu -->
+            <nav>
+                <a href="#about">About Me</a>
+                <a href="#hobbies">Hobbies</a>
+                <a href="#interests">Interests</a>
+                <a href="#games">Games</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <!-- About Me Section -->
+        <section class="section" id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm so glad you're here. I'm a passionate individual who loves to explore new things, especially when it comes to hobbies and games. Let's dive into my world!</p>
+            <img src="your-image-url.jpg" alt="A cute introduction photo">
+        </section>
+
+        <!-- Hobbies Section -->
+        <section class="section" id="hobbies">
+            <h2>My Hobbies</h2>
+            <p>Here are some of the things I love doing in my free time:</p>
+            <ul>
+                <li>🌱 Gardening</li>
+                <li>🎨 Painting</li>
+                <li>📖 Reading</li>
+                <li>🚴‍♂️ Cycling</li>
+            </ul>
+        </section>
+
+        <!-- Interests Section -->
+        <section class="section" id="interests">
+            <h2>My Interests</h2>
+            <p>I'm always curious and love learning about:</p>
+            <ul>
+                <li>🌌 Astronomy</li>
+                <li>🧑‍💻 Coding</li>
+                <li>🎶 Music</li>
+            </ul>
+        </section>
+
+        <!-- Games Section -->
+        <section class="section" id="games">
+            <h2>Favorite Games</h2>
+            <div class="games">
+                <!-- Game 1 -->
+                <div class="game-card">
+                    <h3>🎮 Game 1</h3>
+                    <p>A thrilling adventure.</p>
+                </div>
+                <!-- Game 2 -->
+                <div class="game-card">
+                    <h3>🕹️ Game 2</h3>
+                    <p>Perfect for relaxing.</p>
+                </div>
+                <!-- Game 3 -->
+                <div class="game-card">
+                    <h3>🎲 Game 3</h3>
+                    <p>Strategy and fun!</p>
+                </div>
+                <!-- Game 4 -->
+                <div class="game-card">
+                    <h3>🎮 Game 4</h3>
+                    <p>Action-packed and exciting!</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Divider -->
-    <hr class="divider">
-
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <h2>Contact Me</h2>
-        <button class="contact-button" onclick="alert('Thanks for reaching out!')">Say Hello</button>
-    </section>
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <h2>Contact Me</h2>
+            <button onclick="alert('Thanks for reaching out!')" style="background-color: #0288d1; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s;">
+                Say Hello
+            </button>
+        </section>
+    </div>
 
     <footer>
         <p class="footer-text">&copy; 2024 My Personal Page | Created with 💙</p>
