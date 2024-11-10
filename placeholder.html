@@ -18,29 +18,37 @@
 
         header {
             background-color: #0288d1;
-            padding: 20px;
-            text-align: center;
-            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        header h1 {
-            font-family: 'Pacifico', cursive;
-            font-size: 2.5rem;
-            margin: 0;
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
         }
 
         nav {
-            margin-top: 10px;
+            display: flex;
+            align-items: center;
         }
 
         nav a {
             text-decoration: none;
             color: white;
-            margin: 0 15px;
+            margin-left: 25px;
             font-size: 1.2rem;
             transition: color 0.3s;
         }
@@ -145,12 +153,18 @@
 <body>
 
     <header>
-        <h1>Welcome to My World!</h1>
+        <!-- Logo and Title -->
+        <div class="logo">
+            <img src="https://i.pinimg.com/564x/b8/fc/38/b8fc388eb330f894f01608bced267d36.jpg" alt="Logo">
+            <!-- Optional: <h1>My Page</h1> -->
+        </div>
+
+        <!-- Navigation Menu -->
         <nav>
             <a href="#about">About Me</a>
             <a href="#hobbies">Hobbies</a>
             <a href="#interests">Interests</a>
-            <a href="#games">Favorite Games</a>
+            <a href="#games">Games</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -173,7 +187,6 @@
             <li>📖 Reading: I can get lost in a good book for hours.</li>
             <li>🚴‍♂️ Cycling: Exploring nature on two wheels.</li>
         </ul>
-        <!-- Embed an Image -->
         <img src="your-hobby-image.jpg" alt="A photo of my hobbies">
     </section>
 
@@ -186,29 +199,22 @@
             <li>🧑‍💻 Coding: Creating fun projects and learning new programming languages.</li>
             <li>🎶 Music: Discovering new artists and genres.</li>
         </ul>
-        <!-- Embed an Image -->
         <img src="your-interest-image.jpg" alt="A photo of my interests">
     </section>
 
     <!-- Games Section -->
     <section class="section" id="games">
         <h2>Favorite Games</h2>
-        <p>I'm a big fan of video games! Here are some of my favorites:</p>
         <div class="games">
             <div class="game-card">
                 <h3>🎮 Game 1</h3>
                 <p>A thrilling adventure that keeps me hooked for hours.</p>
-                <img src="your-game1-image.jpg" alt="Screenshot of Game 1">
+                <img src="your-game1-image.jpg" alt="Game 1 Screenshot">
             </div>
             <div class="game-card">
                 <h3>🕹️ Game 2</h3>
                 <p>Perfect for relaxing and unwinding after a long day.</p>
-                <img src="your-game2-image.jpg" alt="Screenshot of Game 2">
-            </div>
-            <div class="game-card">
-                <h3>👾 Game 3</h3>
-                <p>A fun and challenging game that tests my skills.</p>
-                <img src="your-game3-image.jpg" alt="Screenshot of Game 3">
+                <img src="your-game2-image.jpg" alt="Game 2 Screenshot">
             </div>
         </div>
     </section>
@@ -216,7 +222,6 @@
     <!-- Contact Section -->
     <section class="section" id="contact">
         <h2>Contact Me</h2>
-        <p>I'd love to hear from you! Feel free to reach out:</p>
         <button class="btn" onclick="alert('Thanks for reaching out!')">Say Hello</button>
     </section>
 
