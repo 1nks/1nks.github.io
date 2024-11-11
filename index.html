@@ -20,18 +20,21 @@
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
-
-        header {
-            background-color: #90d8ff;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start; /* Align the logo and text to the left */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+header {
+    background-image: url('https://i.pinimg.com/originals/8e/1a/40/8e1a40df89eedc9219f6da0506701c97.gif'); /* Replace with your image or GIF URL */
+    background-size: cover; /* Ensures the image covers the entire header */
+    background-position: center; /* Centers the image in the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: rgb(31, 130, 200); /* Ensures text is visible against the background */
+}
 
         .logo {
             display: flex;
@@ -193,7 +196,7 @@
         align-items: flex-start;
     }
 
-    .nav-links {
+    #nav-links {
         width: 100%;
         display: none;
         flex-direction: column;
@@ -206,7 +209,7 @@
         z-index: 100;
     }
 
-    .nav-links a {
+    #nav-links a {
         padding: 15px;
         text-align: left;
         border-top: 1px solid #fff;
@@ -216,7 +219,7 @@
         display: flex;
     }
 
-    .nav-links.nav-active {
+    #nav-links.nav-active {
         display: flex;
     }
 
@@ -225,6 +228,7 @@
         font-size: 1.5rem;
     }
 }
+
 
         /* Hobby and Interest Card Section */
         .cards {
@@ -325,31 +329,33 @@
         <!-- Logo and Cute Text -->
         <div class="logo">
             <img src="https://i.pinimg.com/1200x/87/71/1d/87711dfe0a7344e182abfbc468c054ab.jpg" alt="Logo"> <!-- Replace with your logo URL -->
-            <span class="logo-text">⋆˚࿔ n4th's page 𝜗𝜚˚⋆</span> <!-- Cute text next to the logo -->
+            <span class="logo-text">⋆˚࿔ n4th's page 𝜗𝜚˚⋆</span>
         </div>
-
+    
         <!-- Hamburger Menu Icon -->
-<div class="hamburger-menu" id="hamburger-menu" onclick="toggleNav()">
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
-
-        <!-- Navigation Menu -->
-        <nav>
+        <div class="hamburger-menu" id="hamburger-menu" onclick="toggleNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    
+        <!-- Navigation Menu with ID for JavaScript -->
+        <nav id="nav-links">
             <a href="#about">About Me</a>
             <a href="#hobbies">Hobbies</a>
             <a href="#interests">Interests</a>
             <a href="#games">Games</a>
             <a href="#contact">Socials</a>
         </nav>
-        
-<script>
-    function toggleNav() {
-        const navLinks = document.getElementById("nav-links");
-        navLinks.classList.toggle("nav-active");
-    }
+    </header>
+    
+    <script>
+        function toggleNav() {
+            const navLinks = document.getElementById("nav-links");
+            navLinks.classList.toggle("nav-active");
+        }
     </script>
+    
 
     </header>
 
