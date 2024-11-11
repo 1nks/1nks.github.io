@@ -159,7 +159,6 @@ header {
             font-size: 1rem;
             color: #555;
         }
-
 /* Hamburger Menu */
 .hamburger-menu {
     display: none;
@@ -194,38 +193,106 @@ header {
 .hamburger-menu.active .line3 {
     transform: rotate(-45deg) translate(5px, -5px);
 }
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Mobile Navigation */
-#nav-links {
+body {
+    font-family: 'Baloo 2', cursive;
+}
+
+header {
+    width: 100%;
+    background-color: #333;
+    color: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hamburger-menu {
     display: none;
     flex-direction: column;
-    width: 100%;
-    padding: 10px;
-    background-color: #0288d1;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    z-index: 100;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin-bottom: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navigation links for larger screens (PC) */
+#nav-links {
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
 }
 
 #nav-links a {
-    padding: 15px;
     color: white;
-    text-align: left;
-    border-top: 1px solid #fff;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
 }
 
-#nav-links.nav-active {
-    display: flex;
+#nav-links a:hover {
+    color: #ffcc00;
 }
 
-/* Media Queries for Mobile */
+/* Mobile Navigation */
 @media (max-width: 768px) {
     .hamburger-menu {
         display: flex;
     }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-image: url('https://yourgifurl.com/your-background.gif'); /* Replace with your GIF URL */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 20px 0;
+        z-index: 100;
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    #nav-links.nav-active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #nav-links a {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        width: 100%;
+        text-align: center;
+    }
 }
+
 
 
 
