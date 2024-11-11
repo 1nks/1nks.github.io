@@ -6,37 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>⋆˚࿔ n4th's page 𝜗𝜚˚⋆</title>
     <!--Favicon-->
-    <link rel="icon" href="1nks/1nks.github.io/main/images/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="1nks/1nks.github.io/main/images/favicon.ico" type="image/x-icon">
+    <link rel=“icon” href=“1nks/1nks.github.io/main/images/favicon.ico” type=“image/x-icon”>
+    <link rel=“shortcut icon” href=“1nks/1nks.github.io/main/images/favicon.ico” type=“image/x-icon”>
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;500&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap"> <!-- Cute font -->
     <style>
         body {
             background-color: #e0f7fa;
-            background-image: url('https://i.pinimg.com/originals/9c/f6/19/9cf6192b109b15ad892fbc56e8471151.gif');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
             font-family: 'Quicksand', sans-serif;
             margin: 0;
             padding: 0;
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
-
-        header {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+header {
+    background-image: url('https://i.pinimg.com/originals/9c/f6/19/9cf6192b109b15ad892fbc56e8471151.gif'); /* Replace with your image or GIF URL */
+    background-size: cover; /* Ensures the image covers the entire header */
+    background-position: center; /* Centers the image in the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: rgb(31, 130, 200); /* Ensures text is visible against the background */
+}
 
         .logo {
             display: flex;
@@ -44,27 +42,29 @@
         }
 
         .logo img {
-            height: 80px;
-            width: 80px;
-            border-radius: 15px;
-            margin-right: 15px;
-        }
+    height: 80px;
+    width: 80px;
+    border-radius: 15px; /* Curved square instead of circle */
+    margin-right: 15px;
+}
+
 
         .logo-text {
-            font-family: 'Baloo 2', cursive;
+            font-family: 'Baloo 2', cursive; /* Cute font */
             font-size: 2rem;
             color: #0077ff;
+            margin-left: 10px;
         }
 
         nav {
             display: flex;
             align-items: center;
-            gap: 25px;
         }
 
         nav a {
             text-decoration: none;
-            color: #0288d1;
+            color: white;
+            margin-left: 25px;
             font-size: 1.2rem;
             transition: color 0.3s;
         }
@@ -73,77 +73,272 @@
             color: #b3e5fc;
         }
 
-        .hamburger-menu {
-            display: none;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .hamburger-menu .line {
-            width: 25px;
-            height: 3px;
-            background-color: #0288d1;
-            border-radius: 5px;
-        }
-
         .section {
-            padding: 80px 20px;
+            padding: 60px 20px;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
-            opacity: 0;
-            transform: translateY(100px);
-            animation: slideIn 1s forwards;
         }
 
         .section:nth-child(odd) {
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: #e1f5fe;
         }
 
-        @keyframes slideIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .section:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-                flex-direction: column;
-                background-color: #0288d1;
-                padding: 20px;
-                position: absolute;
-                top: 70px;
-                right: 0;
-                left: 0;
-                z-index: 999;
-            }
-
-            nav.nav-active {
-                display: flex;
-            }
-
-            .hamburger-menu {
-                display: flex;
-            }
+        .section h2 {
+            font-size: 2rem;
+            color: #0288d1;
+            margin-bottom: 20px;
+            font-family: 'Baloo 2', cursive; /* Cute font applied here */
         }
+
+        .section h2 span {
+            font-size: 1.5rem;
+            color: #ff4081;
+            margin-left: 10px;
+        }
+
+        .section p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #90d8ff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+        }
+
+        /* Game Card Section */
+        .games {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .game-card {
+            background-color: #ffffff;
+            border: 1px solid #0288d1;
+            border-radius: 10px;
+            width: 200px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .game-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-card h3 {
+            font-size: 1.5rem;
+            color: #0288d1;
+        }
+
+        .game-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 101;
+    background-image: url('https://i.pinimg.com/originals/9c/f6/19/9cf6192b109b15ad892fbc56e8471151.giff'); /* Replace with your GIF URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu .line {
+    width: 25px;
+    height: 3px;
+    background-color: #0288d1;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Styles for "X" button */
+.hamburger-menu.active .line1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active .line2 {
+    opacity: 0;
+}
+
+.hamburger-menu.active .line3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Navigation */
+#nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    background-color: #0288d1;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+#nav-links a {
+    padding: 15px;
+    color: white;
+    text-align: left;
+    border-top: 1px solid #fff;
+}
+
+#nav-links.nav-active {
+    display: flex;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+}
+
+
+
+        /* Hobby and Interest Card Section */
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #0288d1;
+            border-radius: 10px;
+            width: 200px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: #0288d1;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #555;
+        }
+/* Style for Contact Links */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    background-color: #0288d1;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 220px;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #0077b5;
+}
+
+.social-icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: white;
+    object-fit: cover;
+}
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 48%; /* Adjust width to fit two columns */
+}
+
+@media (max-width: 768px) {
+    .contact-column {
+        width: 100%; /* Stack into a single column on small screens */
+    }
+}
+
     </style>
 </head>
 
 <body>
+
     <header>
+        <!-- Logo and Cute Text -->
         <div class="logo">
-            <img src="https://i.pinimg.com/1200x/87/71/1d/87711dfe0a7344e182abfbc468c054ab.jpg" alt="Logo">
+            <img src="https://i.pinimg.com/1200x/87/71/1d/87711dfe0a7344e182abfbc468c054ab.jpg" alt="Logo"> <!-- Replace with your logo URL -->
             <span class="logo-text">⋆˚࿔ n4th's page 𝜗𝜚˚⋆</span>
         </div>
-
+    
+        <!-- Hamburger Menu Icon -->
         <div class="hamburger-menu" id="hamburger-menu" onclick="toggleNav()">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="line line3"></div>
         </div>
-
+    
+        <!-- Navigation Menu -->
         <nav id="nav-links">
             <a href="#about">About Me</a>
             <a href="#hobbies">Hobbies</a>
@@ -152,44 +347,153 @@
             <a href="#contact">Socials</a>
         </nav>
     </header>
-
+    
+    
     <script>
         function toggleNav() {
             const navLinks = document.getElementById("nav-links");
             navLinks.classList.toggle("nav-active");
         }
     </script>
+    
 
-    <!-- About Section -->
+    </header>
+
+    <!-- About Me Section -->
     <section class="section" id="about">
         <h2>About Me<span>💖</span></h2>
-        <p>Hello! I'm so glad you're here...</p>
+        <p>Hello! I'm so glad you're here. I'm a passionate individual who loves to explore new things, especially when it comes to hobbies and games. I am 15 years old and I am compassionate to make friends, If you have clicked from my social links, Hey! Thanks for stopping by. I am Bisexual/Asexual, I go by He/Him/They/Them. I am from the Philippines. I am a bit insane but please be friends with me!</p>
+        <img src="https://cdn.discordapp.com/attachments/982452400587702302/1305169235676233860/Blue_Modern_Be_Yourself_Twitter_Header.png?ex=67320d12&is=6730bb92&hm=5d23aa43c9fea7f38d5858ded0ee629df3ad511958288ba7dd65d91860fbf3c7&" alt="A cute introduction photo">
     </section>
 
     <!-- Hobbies Section -->
     <section class="section" id="hobbies">
         <h2>My Hobbies<span>🌟</span></h2>
         <p>Here are some of the things I love doing in my free time:</p>
+        <div class="cards">
+            <div class="card">
+                <h3>🏅Collecting Badges on Roblox</h3>
+                <p>I love collecting badges on Roblox in my free time! I currently have 1,000,000 Badges in Roblox and counting!</p>
+            </div>
+            <div class="card">
+                <h3>🎮Grinding</h3>
+                <p>Grinding games like alot!!</p>
+            </div>
+            <div class="card">
+                <h3>🧑‍💻Web Designing</h3>
+                <p>The one I am doing now! haha</p>
+            </div>
+            <div class="card">
+                <h3>🌊Swimming</h3>
+                <p>I do like Swimming, since I was a child. It's not kinda of a hard sport. And I dont join swimming tournaments because I'm not that athletic.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Interests Section -->
     <section class="section" id="interests">
         <h2>My Interests<span>🎶</span></h2>
+        <p>I'm always curious and love learning about:</p>
+        <div class="cards">
+            <div class="card">
+                <h3>🐺 Men???</h3>
+                <img src="https://i.pinimg.com/originals/55/c2/9d/55c29d4831b49b5aa04f5934592c2a13.gif" alt="A cute introduction photo">
+                <p>I do like men, a bit. The list is: Legoshi (Beastars), Mr. Wolf (The Bad Guys), Von Lycaon (Zenless Zone Zero), Kim Sunoo (Enhypen), and the list goes on! </p>
+            </div>
+            <div class="card">
+                <h3>🧑‍💻 Coding</h3>
+                <img src="https://i.pinimg.com/564x/40/19/84/401984b7863fc9781bff7882a50a95cb.jpg" alt="A cute introduction photo">
+                <p>Building this website is another one of my interests. (Reanactment of me doing this 1000 lines of freaking code)</p>
+            </div>
+            <div class="card">
+                <h3>🎧Listening KPOP and JPOP!</h3>
+                <img src="https://i.pinimg.com/originals/ea/b3/cc/eab3cc85c50c637d089d04ef3ea8a86d.gif" alt="A cute introduction photo">
+                <p>I do love listening to Japanese and Korean Music! Artists like Ado, YOASOBI, Vocaloid Music Makers, Enhypen, BTS, Twice and more are so amazing!</p>
+            </div>
+            <div class="card">
+                <h3>🍿Watching Movies</h3>
+                <img src="https://i.pinimg.com/originals/a7/90/23/a79023c01372d18caedda850481aed68.gif" alt="A cute introduction photo">
+                <p>I do like movies like having a bit of plot twists, and animated movies are my thing, I also like comedic movies like Girl, Boy, Bakla, Tomboy (Vice Ganda's Movie)</p>
+            </div>
+        </div>
     </section>
 
     <!-- Games Section -->
     <section class="section" id="games">
         <h2>Favorite Games<span>🎮</span></h2>
+        <div class="games">
+            <div class="game-card">
+                <h3>🎮 Roblox</h3>
+                <img src="https://i.pinimg.com/originals/44/db/9c/44db9c46dd2e3d8a1cde7d8f3feb9cd9.gif" alt="A cute introduction photo">
+                <p>Been playing Roblox since 2016, This game has been my childhood game and I will grow out of it soon, I still love playing it!</p>
+            </div>
+            <div class="game-card">
+                <h3>🕹️ Zenless Zone Zero</h3>
+                <img src="https://i.pinimg.com/originals/81/ad/2c/81ad2cae41979dcad9f6a4c1a94fda35.gif" alt="A cute introduction photo">
+                <p>Masterpiece of game! The graphics in this game are so good! But it lags me for a bit haha!</p>
+            </div>
+            <div class="game-card">
+                <h3>🎮 Rhythm Hive & Colorful Stage</h3>
+                <img src="https://i.pinimg.com/originals/e3/6a/82/e36a820879c9bc8dc450dc15e90a0e34.gif" alt="A cute introduction photo">
+                <p>I'm a rhythm player, so I consider myself a fast-hand coordinator. I joined RH at 2021 and i immediately hooked on the game! because of BTS and Enhypen lol, same goes to Project Sekai, first I played the JP Ver now to the ENG version. JUST GIVE ME KAGAMINE LEN 4 STAR CARDS</p>
+            </div>
+            <div class="game-card">
+                <h3>🎮 Mobile Legends: Bang Bang</h3>
+                <img src="https://i.pinimg.com/564x/21/16/72/2116721c6206db7ca28ffa210b4d3c95.jpg" alt="A cute introduction photo">
+                <p>Mostly love MOBA 5v5 games, so I decided to join in 2022 because the popularity shifted from da boyz to the flop eras (no offense to the jjmons lol)</p>
+            </div>
+            <div class="game-card">
+                <h3>🎮 Cookie Run: Ovenbreak</h3>
+                <img src="https://i.pinimg.com/originals/61/4d/8a/614d8aac0142e705b9cffc5788a6308f.gif" alt="A cute introduction photo">
+                <p>I played the Kingdom version of it back in 2021, but i quit due to lag and rage haha, so I decided to go to the Ovenbreak version of the game, where the Cookie Run franchise started</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <h2>Socials<span>📩</span></h2>
-    </section>
+<!-- Contact Section -->
+<section class="section" id="contact">
+    <h2>Socials<span>📩</span></h2>
+    <p>If you'd like to get in touch with me, feel free to reach out on any of the following platforms:</p>
+
+    <!-- Social Media or Third-Party Links with Icons -->
+    <div class="contact-links">
+        <a href="https://www.roblox.com/users/1031174244/profile" target="_blank" class="contact-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Roblox_Logo_2022.jpg" alt="Roblox (Main Profile)" class="social-icon">
+            Roblox (Main Profile)
+        </a>
+
+        <a href="https://www.roblox.com/users/155648750/profile" target="_blank" class="contact-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Roblox_Logo_2022.jpg" alt="Roblox (2nd Profile)" class="social-icon">
+            Roblox (Alt Account 2016)
+        </a>
+
+        <a href="https://twitter.com/980BUI" target="_blank" class="contact-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/1024px-X_logo_2023.svg.png" alt="X Page" class="social-icon">
+            X Page
+        </a>
+
+        <a href="https://www.youtube.com/@xomiraii" target="_blank" class="contact-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" class="social-icon">
+            YouTube
+        </a>
+
+        <a href="https://www.tiktok.com/@sunoosmineralwater" target="_blank" class="contact-btn">
+            <img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="TikTok" class="social-icon">
+            TikTok Account
+        </a>
+
+        <a href="#" target="#" class="contact-btn">
+            <img src="https://static.vecteezy.com/system/resources/previews/006/892/625/non_2x/discord-logo-icon-editorial-free-vector.jpg" alt="Discord" class="social-icon">
+            4iv0 (Discord)
+        </a>
+
+    </div>
+</section>
+
 
     <footer>
-        <p>Made with 💖 by n4th!</p>
+        <p class="footer-text">Made with 💖 by n4th!</p>
     </footer>
-</body>
 
+</body>
 </html>
