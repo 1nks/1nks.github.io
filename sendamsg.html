@@ -11,17 +11,22 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-image: url('https://i.pinimg.com/originals/48/c7/f1/48c7f1e343412ce0360abbe54af08d89.gif'); /* Replace with your image URL */
+            background-image: url('https://i.pinimg.com/originals/bf/d4/bb/bfd4bb1d9c46275debde227178855ab7.gif'); /* Replace with your image URL */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             color: #ffffff;
             font-family: Arial, sans-serif;
+            padding: 20px;
         }
         form {
             display: flex;
             flex-direction: column;
             gap: 10px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for form */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
         }
         input, textarea {
             padding: 10px;
@@ -29,6 +34,8 @@
             border: none;
             outline: none;
             width: 300px;
+            background-color: #ffffff;
+            color: #000000;
         }
         textarea {
             resize: none;
@@ -48,6 +55,22 @@
         .status {
             margin-top: 20px;
         }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            text-align: center;
+        }
+        footer a {
+            color: #7289da;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            color: #5b6eae;
+        }
     </style>
 </head>
 <body>
@@ -58,6 +81,11 @@
         <button type="submit">Send Message</button>
         <p class="status" id="status"></p>
     </form>
+
+    <!-- Footer Section -->
+    <footer>
+        <a href="index.html">⬅️ Back to Homepage</a>
+    </footer>
 
     <script>
         const form = document.getElementById('messageForm');
