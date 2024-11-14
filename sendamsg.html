@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Message Sender</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('https://i.pinimg.com/originals/48/c7/f1/48c7f1e343412ce0360abbe54af08d89.gif'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input, textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            width: 300px;
+        }
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+        button {
+            padding: 10px;
+            background-color: #7289da;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #5b6eae;
+        }
+        .status {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Send Anonymous Message</h1>
+    <form id="messageForm">
+        <textarea id="message" placeholder="Type your message here..." required></textarea>
+        <button type="submit">Send Message</button>
+        <p class="status" id="status"></p>
+    </form>
+
+    <script>
+        const form = document.getElementById('messageForm');
+        const messageInput = document.getElementById('message');
+        const statusEl = document.getElementById('status');
+
+        // Replace this with your Discord Webhook URL
+        const webhookURL = 'https://discord.com/api/webhooks/1306410559289294899/6-4MaOE7na0BIsPF5nNx6ZyZvOoin95icw-iKClD6VBGl1Z-CYbAYLs8lSwvpB8-zOv6';
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent form from reloading the page
+            const messageContent = messageInput.value.trim();
+
+            if (!messageContent) {
+                statusEl.textContent = 'Message cannot be empty!';
+                return;
+            }
+
+            try {
+                const response = await fetch(webhookURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ content: messageContent })
+                });
+
+                if (response.ok) {
+                    statusEl.textContent = 'Message sent successfully!';
+                    messageInput.value = ''; // Clear the textarea
+                } else {
+                    statusEl.textContent = 'Failed to send message. Please try again.';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                statusEl.textContent = 'An error occurred. Check the console for details.';
+            }
+        });
+    </script>
+</body>
+</html>
