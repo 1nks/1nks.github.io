@@ -75,55 +75,11 @@
 </head>
 <body>
 
-    <h1>Send Anonymous Message</h1>
-    <form id="messageForm">
-        <textarea id="message" placeholder="Type your message here..." required></textarea>
-        <button type="submit">Send Message</button>
-        <p class="status" id="status"></p>
-    </form>
-    
+    <h1>🚫Under Maintenance. Please check back later.</h1>
+   
     <!-- Footer Section -->
     <footer>
         <a href="index">⬅️ Back to Homepage</a>
     </footer>
-
-    <script>
-        const form = document.getElementById('messageForm');
-        const messageInput = document.getElementById('message');
-        const statusEl = document.getElementById('status');
-
-        // Replace this with your Discord Webhook URL
-        const webhookURL = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMyNzU0Mzc0MzU1Mjk0NjE3Ni9wRk1nWkNKNVJZcVZ1Z2M1cGQyVFhPaTI2R21hME1hQUlrX0k4MUxJeGppWHp5cmVEYlJjaFV5ZEUwY2xsMHE5ZEFkeQ==';
-
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault(); // Prevent form from reloading the page
-            const messageContent = messageInput.value.trim();
-
-            if (!messageContent) {
-                statusEl.textContent = 'Message cannot be empty!';
-                return;
-            }
-
-            try {
-                const response = await fetch(webhookURL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ content: messageContent })
-                });
-
-                if (response.ok) {
-                    statusEl.textContent = 'Message sent successfully!';
-                    messageInput.value = ''; // Clear the textarea
-                } else {
-                    statusEl.textContent = 'Failed to send message. Please try again.';
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                statusEl.textContent = 'An error occurred. Check the console for details.';
-            }
-        });
-    </script>
 </body>
 </html>
