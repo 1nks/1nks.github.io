@@ -85,12 +85,12 @@
     </style>
 </head>
 <body>
-     <div class="form-container">
-        <h1>Send A Message!</h1>
+    <div class="form-container">
+        <h1>Send a Message! 💮</h1>
         <form id="contact-form">
             <div class="form-group">
-                <label for="first-name">First Name</label>
-                <input type="text" id="first-name" name="first-name" required>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
@@ -106,20 +106,43 @@
     <footer>
         <a href="index">⬅️ Back to Homepage</a>
     </footer>
-  <script>
-        const webhookURL = "YOUR_DISCORD_WEBHOOK_URL_HERE";
+
+    <script>
+        // Base64 encoded webhook URL (Replace with your actual encoded webhook)
+        const base64Webhook = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMyNzU0Mzc0MzU1Mjk0NjE3Ni9wRk1nWkNKNVJZcVZ1Z2M1cGQyVFhPaTI2R21hME1hQUlrX0k4MUxJeGppWHp5cmVEYlJjaFV5ZEUwY2xsMHE5ZEFkeQ==";
+
+        // Decode the Base64 webhook URL
+        const webhookURL = atob(base64Webhook);
 
         document.getElementById('submit-btn').addEventListener('click', async () => {
-            const firstName = document.getElementById('first-name').value;
+            const name = document.getElementById('name').value;
             const message = document.getElementById('message').value;
 
-            if (!firstName || !lastName || !message) {
+            if (!name || !message) {
                 alert("Please fill out all fields.");
                 return;
             }
 
             const payload = {
-                content: `**New Form Submission**\n\n**First Name:** ${firstName}\n**Message:**\n${message}`
+                embeds: [
+                    {
+                        title: "New Message!",
+                        color: 65280, // Green color
+                        fields: [
+                            {
+                                name: "Name",
+                                value: name,
+                                inline: true
+                            },
+                            {
+                                name: "Message",
+                                value: message,
+                                inline: false
+                            }
+                        ],
+                        timestamp: new Date().toISOString()
+                    }
+                ]
             };
 
             try {
