@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Message Sender</title>
     <style>
         body {
@@ -68,6 +68,20 @@
         .form-group button:hover {
             background: #69ff89;
         }
+        .rating-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .star {
+            font-size: 24px;
+            cursor: pointer;
+            color: #ddd;
+        }
+        .star.selected {
+            color: #f39c12;
+        }
         footer {
             position: fixed;
             bottom: 0;
@@ -98,6 +112,17 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" required></textarea>
             </div>
+            <div class="rating-container">
+                <label for="rating">Rate the whole website! :3</label>
+                <div id="rating" class="rating">
+                    <!-- Star icons -->
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+            </div>
             <div class="form-group">
                 <button type="button" id="submit-btn">Send!</button>
             </div>
@@ -116,19 +141,41 @@
         // Decode the Base64 webhook URL
         const webhookURL = atob(base64Webhook);
 
+        let ratingValue = 0;
+
+        // Event listener for star click
+        document.querySelectorAll('.star').forEach(star => {
+            star.addEventListener('click', (e) => {
+                ratingValue = parseInt(e.target.getAttribute('data-value'));
+                updateStars(ratingValue);
+            });
+        });
+
+        // Update the stars based on the rating value
+        function updateStars(rating) {
+            document.querySelectorAll('.star').forEach(star => {
+                const value = parseInt(star.getAttribute('data-value'));
+                if (value <= rating) {
+                    star.classList.add('selected');
+                } else {
+                    star.classList.remove('selected');
+                }
+            });
+        }
+
         document.getElementById('submit-btn').addEventListener('click', async () => {
             const name = document.getElementById('name').value;
             const message = document.getElementById('message').value;
 
-            if (!name || !message) {
-                alert("Please fill out all fields.");
+            if (!name || !message || ratingValue === 0) {
+                alert("Please fill out all fields and provide a rating.");
                 return;
             }
 
             const payload = {
                 embeds: [
                     {
-                        title: "New Message!",
+                        title: "New Message! 💬",
                         color: 65280, // Green color
                         fields: [
                             {
@@ -140,6 +187,11 @@
                                 name: "Message",
                                 value: message,
                                 inline: false
+                            },
+                            {
+                                name: "Rating",
+                                value: `${ratingValue} stars`,
+                                inline: true
                             }
                         ],
                         timestamp: new Date().toISOString()
@@ -157,6 +209,7 @@
                 if (response.ok) {
                     alert("Message sent successfully!");
                     document.getElementById('contact-form').reset();
+                    updateStars(0); // Reset rating stars after submission
                 } else {
                     alert("Failed to send the message. Please try again.");
                 }
