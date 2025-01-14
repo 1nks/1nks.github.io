@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-            <!-- Open Graph tags for rich link previews -->
-            <meta property="og:title" content="⋆˚࿔ Send a message! 𝜗𝜚˚⋆">
-            <meta property="og:description" content="Send a message! Will respond you in a vacant time though!">
-            <meta property="og:image" content="https://i.pinimg.com/736x/cf/bd/3b/cfbd3b1353bc05a835cfdc74b1c91bac.jpgg">
-            <meta property="og:url" content="https://1nks.github.io/sendamsg">
-            <meta property="og:type" content="website">
-                <!-- Twitter Card tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="⋆˚࿔ Send a message! 𝜗𝜚˚⋆">
-        <meta name="twitter:description" content="Send a message! Will respond you in a vacant time though!">
-        <meta name="twitter:image" content="https://i.pinimg.com/736x/cf/bd/3b/cfbd3b1353bc05a835cfdc74b1c91bac.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Open Graph tags for rich link previews -->
+    <meta property="og:title" content="⋆˚࿔ Send a message! 𝜗𝜚˚⋆">
+    <meta property="og:description" content="Send a message! Will respond you in a vacant time though!">
+    <meta property="og:image" content="https://i.pinimg.com/736x/cf/bd/3b/cfbd3b1353bc05a835cfdc74b1c91bac.jpgg">
+    <meta property="og:url" content="https://1nks.github.io/sendamsg">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="⋆˚࿔ Send a message! 𝜗𝜚˚⋆">
+    <meta name="twitter:description" content="Send a message! Will respond you in a vacant time though!">
+    <meta name="twitter:image" content="https://i.pinimg.com/736x/cf/bd/3b/cfbd3b1353bc05a835cfdc74b1c91bac.jpg">
     <title>Message Sender</title>
     <style>
         body {
@@ -25,7 +27,8 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-image: url('https://i.pinimg.com/736x/3c/8b/b7/3c8bb732d8c8cc2fae33e1c14eb9eae0.jpg'); /* Replace with your image URL */
+            background-image: url('https://i.pinimg.com/736x/3c/8b/b7/3c8bb732d8c8cc2fae33e1c14eb9eae0.jpg');
+            /* Replace with your image URL */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -34,6 +37,7 @@
             background-color: #ffffff;
             padding: 20px;
         }
+
         .form-container {
             background: transparent;
             padding: 30px;
@@ -41,19 +45,23 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 310px;
         }
+
         .form-container h1 {
             font-size: 20px;
             margin-bottom: 20px;
             text-align: center;
         }
+
         .form-group {
             margin-bottom: 15px;
         }
+
         .form-group label {
             display: block;
             font-size: 14px;
             margin-bottom: 5px;
         }
+
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -62,10 +70,12 @@
             border-radius: 4px;
             font-size: 14px;
         }
+
         .form-group textarea {
             resize: vertical;
             height: 100px;
         }
+
         .form-group button {
             width: 100%;
             padding: 10px;
@@ -76,23 +86,28 @@
             font-size: 16px;
             cursor: pointer;
         }
+
         .form-group button:hover {
             background: #69ff89;
         }
+
         .rating-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-top: 10px;
         }
+
         .star {
             font-size: 24px;
             cursor: pointer;
             color: #ddd;
         }
+
         .star.selected {
             color: #faff95;
         }
+
         footer {
             position: fixed;
             bottom: 0;
@@ -101,16 +116,19 @@
             padding: 10px 0;
             text-align: center;
         }
+
         footer a {
             color: #7289da;
             text-decoration: none;
             font-weight: bold;
         }
+
         footer a:hover {
             color: #5b6eae;
         }
     </style>
 </head>
+
 <body>
     <div class="form-container">
         <h1>Send a Message! 💮</h1>
@@ -140,7 +158,6 @@
             </div>
         </form>
     </div>
- 
 
     <!-- Footer Section -->
     <footer>
@@ -149,10 +166,12 @@
 
     <script>
         // Base64 encoded webhook URL (Replace with your actual encoded webhook)
-        const base64Webhook = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMyNzc5MjYwMzcwMTE4MjQ5NC84NF9yRG1JQ2tSWGNHQ2xDbmxhbGk3TV9QU0pQa1Q4ZEZJeVozTjVfNU9aVVBxWkgyOHJVVUV5SkRxV053cHhTRUk2dg==";
+        const wht = "VzlVTlYtQmc1UnBrQVpDZW1kdmpWVHE2SE5xNmFUdG4xMmZLNF9iVDBiTWVsUUV3Sy1zcTlDc2ZZZ1VWR3psc2tJY2c=";
+        const whId = "MTMyODUxNTYwMTI2NTcyNTQ4MQ==";
+        const base = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3Mv";
 
         // Decode the Base64 webhook URL
-        const webhookURL = atob(base64Webhook);
+        const URL = atob(base) + atob(whId) + "/" + atob(wht);
 
         let ratingValue = 0;
 
@@ -213,7 +232,7 @@
             };
 
             try {
-                const response = await fetch(webhookURL, {
+                const response = await fetch(URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
@@ -233,4 +252,5 @@
         });
     </script>
 </body>
+
 </html>
