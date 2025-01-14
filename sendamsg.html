@@ -1,236 +1,511 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-            <!-- Open Graph tags for rich link previews -->
-            <meta property="og:title" content="⋆˚࿔ Send a message! 𝜗𝜚˚⋆">
-            <meta property="og:description" content="Send a message! Will respond you in a vacant time though!">
-            <meta property="og:image" content="https://i.pinimg.com/736x/cf/bd/3b/cfbd3b1353bc05a835cfdc74b1c91bac.jpgg">
-            <meta property="og:url" content="https://1nks.github.io/sendamsg">
-            <meta property="og:type" content="website">
-                <!-- Twitter Card tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="⋆˚࿔ Send a message! 𝜗𝜚˚⋆">
-        <meta name="twitter:description" content="Send a message! Will respond you in a vacant time though!">
-        <meta name="twitter:image" content="https://i.pinimg.com/736x/cf/bd/3b/cfbd3b1353bc05a835cfdc74b1c91bac.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+
+        rel="stylesheet">
+
+    <!-- Open Graph tags for rich link previews -->
+
+    <meta property="og:title" content="⋆˚࿔ Send a message! 𝜗𝜚˚⋆">
+
+    <meta property="og:description" content="Send a message! Will respond you in a vacant time though!">
+
+    <meta property="og:image" content="https://i.pinimg.com/736x/cf/bd/3b/cfbd3b1353bc05a835cfdc74b1c91bac.jpgg">
+
+    <meta property="og:url" content="https://1nks.github.io/sendamsg">
+
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card tags -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="⋆˚࿔ Send a message! 𝜗𝜚˚⋆">
+
+    <meta name="twitter:description" content="Send a message! Will respond you in a vacant time though!">
+
+    <meta name="twitter:image" content="https://i.pinimg.com/736x/cf/bd/3b/cfbd3b1353bc05a835cfdc74b1c91bac.jpg">
+
     <title>Message Sender</title>
+
     <style>
+
         body {
+
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
+
             justify-content: center;
+
             height: 100vh;
-            background-image: url('https://i.pinimg.com/736x/3c/8b/b7/3c8bb732d8c8cc2fae33e1c14eb9eae0.jpg'); /* Replace with your image URL */
+
+            background-image: url('https://i.pinimg.com/736x/3c/8b/b7/3c8bb732d8c8cc2fae33e1c14eb9eae0.jpg');
+
+            /* Replace with your image URL */
+
             background-size: cover;
+
             background-position: center;
+
             background-repeat: no-repeat;
+
             color: #37556eb5;
+
             font-family: "Sour Gummy", serif;
+
             background-color: #ffffff;
+
             padding: 20px;
+
         }
+
+
+
         .form-container {
+
             background: transparent;
+
             padding: 30px;
+
             border-radius: 9px;
+
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
             width: 310px;
+
         }
+
+
+
         .form-container h1 {
+
             font-size: 20px;
+
             margin-bottom: 20px;
+
             text-align: center;
+
         }
+
+
+
         .form-group {
+
             margin-bottom: 15px;
+
         }
+
+
+
         .form-group label {
+
             display: block;
+
             font-size: 14px;
+
             margin-bottom: 5px;
+
         }
+
+
+
         .form-group input,
+
         .form-group textarea {
+
             width: 100%;
+
             padding: 10px;
+
             border: 1px solid #ccc;
+
             border-radius: 4px;
+
             font-size: 14px;
+
         }
+
+
+
         .form-group textarea {
+
             resize: vertical;
+
             height: 100px;
+
         }
+
+
+
         .form-group button {
+
             width: 100%;
+
             padding: 10px;
+
             background: #9affb0;
+
             color: rgb(86, 79, 79);
+
             border: none;
+
             border-radius: 4px;
+
             font-size: 16px;
+
             cursor: pointer;
+
         }
+
+
+
         .form-group button:hover {
+
             background: #69ff89;
+
         }
+
+
+
         .rating-container {
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
             margin-top: 10px;
+
         }
+
+
+
         .star {
+
             font-size: 24px;
+
             cursor: pointer;
+
             color: #ddd;
+
         }
+
+
+
         .star.selected {
+
             color: #faff95;
+
         }
+
+
+
         footer {
+
             position: fixed;
+
             bottom: 0;
+
             width: 100%;
+
             background-color: rgba(0, 0, 0, 0.8);
+
             padding: 10px 0;
+
             text-align: center;
+
         }
+
+
+
         footer a {
+
             color: #7289da;
+
             text-decoration: none;
+
             font-weight: bold;
+
         }
+
+
+
         footer a:hover {
+
             color: #5b6eae;
+
         }
+
     </style>
+
 </head>
+
+
+
 <body>
+
     <div class="form-container">
+
         <h1>Send a Message! 💮</h1>
+
         <h3>Send any kind! Suggestions? Questions? Or Feedback here! I'll respond!</h3>
+
         <form id="contact-form">
+
             <div class="form-group">
+
                 <label for="name">Your Name</label>
+
                 <input type="text" id="name" name="name" required>
+
             </div>
+
             <div class="form-group">
+
                 <label for="message">Message</label>
+
                 <textarea id="message" name="message" required></textarea>
+
             </div>
+
             <div class="rating-container">
+
                 <label for="rating">Rate the whole website! :3</label>
+
                 <div id="rating" class="rating">
+
                     <!-- Star icons -->
+
                     <span class="star" data-value="1">&#9733;</span>
+
                     <span class="star" data-value="2">&#9733;</span>
+
                     <span class="star" data-value="3">&#9733;</span>
+
                     <span class="star" data-value="4">&#9733;</span>
+
                     <span class="star" data-value="5">&#9733;</span>
+
                 </div>
+
             </div>
+
             <div class="form-group">
+
                 <button type="button" id="submit-btn">Send!</button>
+
             </div>
+
         </form>
+
     </div>
- 
+
+
 
     <!-- Footer Section -->
+
     <footer>
+
         <a href="index">⬅️ Back to Homepage</a>
+
     </footer>
 
+
+
     <script>
+
         // Base64 encoded webhook URL (Replace with your actual encoded webhook)
-        const base64Webhook = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMyNzc5MjYwMzcwMTE4MjQ5NC84NF9yRG1JQ2tSWGNHQ2xDbmxhbGk3TV9QU0pQa1Q4ZEZJeVozTjVfNU9aVVBxWkgyOHJVVUV5SkRxV053cHhTRUk2dg==";
+
+        const wht = "VzlVTlYtQmc1UnBrQVpDZW1kdmpWVHE2SE5xNmFUdG4xMmZLNF9iVDBiTWVsUUV3Sy1zcTlDc2ZZZ1VWR3psc2tJY2c=";
+
+        const whId = "MTMyODUxNTYwMTI2NTcyNTQ4MQ==";
+
+        const base = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3Mv";
+
+
 
         // Decode the Base64 webhook URL
-        const webhookURL = atob(base64Webhook);
+
+        const URL = atob(base) + atob(whId) + "/" + atob(wht);
+
+
 
         let ratingValue = 0;
 
+
+
         // Event listener for star click
+
         document.querySelectorAll('.star').forEach(star => {
+
             star.addEventListener('click', (e) => {
+
                 ratingValue = parseInt(e.target.getAttribute('data-value'));
+
                 updateStars(ratingValue);
+
             });
+
         });
+
+
 
         // Update the stars based on the rating value
+
         function updateStars(rating) {
+
             document.querySelectorAll('.star').forEach(star => {
+
                 const value = parseInt(star.getAttribute('data-value'));
+
                 if (value <= rating) {
+
                     star.classList.add('selected');
+
                 } else {
+
                     star.classList.remove('selected');
+
                 }
+
             });
+
         }
 
+
+
         document.getElementById('submit-btn').addEventListener('click', async () => {
+
             const name = document.getElementById('name').value;
+
             const message = document.getElementById('message').value;
 
+
+
             if (!name || !message || ratingValue === 0) {
+
                 alert("Please fill out all fields and provide a rating.");
+
                 return;
+
             }
+
+
 
             const payload = {
+
                 embeds: [
+
                     {
+
                         title: "New Message! 💬",
+
                         color: 65280, // Green color
+
                         fields: [
+
                             {
+
                                 name: "Name",
+
                                 value: name,
+
                                 inline: true
+
                             },
+
                             {
+
                                 name: "Message",
+
                                 value: message,
+
                                 inline: false
+
                             },
+
                             {
+
                                 name: "Rating",
+
                                 value: `${ratingValue} ⭐`,
+
                                 inline: true
+
                             }
+
                         ],
+
                         timestamp: new Date().toISOString()
+
                     }
+
                 ]
+
             };
 
+
+
             try {
-                const response = await fetch(webhookURL, {
+
+                const response = await fetch(URL, {
+
                     method: 'POST',
+
                     headers: { 'Content-Type': 'application/json' },
+
                     body: JSON.stringify(payload)
+
                 });
 
+
+
                 if (response.ok) {
+
                     alert("Message sent successfully!");
+
                     document.getElementById('contact-form').reset();
+
                     updateStars(0); // Reset rating stars after submission
+
                 } else {
+
                     alert("Failed to send the message. Please try again.");
+
                 }
+
             } catch (error) {
+
                 console.error("Error sending message to Discord:", error);
+
                 alert("An error occurred. Please try again.");
+
             }
+
         });
+
     </script>
+
 </body>
-</html>
+
+
+
+                                                                   </html>
